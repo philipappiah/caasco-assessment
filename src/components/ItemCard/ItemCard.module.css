@@ -1,0 +1,39 @@
+.item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .image {
+    height: 10rem;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 2.5rem;
+    text-align: left;
+    color: rgb(49, 47, 47);
+    font-family: "Merriweather", serif;
+  }
+  
+  .from {
+    margin-top: 0.5rem;
+    text-align: left;
+    color: rgb(133, 126, 126);
+  }
+  
