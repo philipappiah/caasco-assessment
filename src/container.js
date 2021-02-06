@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Grid from './components/Grid'
 import Filter from './components/Filter'
+import Detail from './components/Detail'
 import { fetchDogBreeds } from './api'
 
 class Container extends Component {
@@ -10,8 +11,10 @@ class Container extends Component {
     initialDogBreeds: [],
     isLoading: false,
     moreExists: true,
-    breedId: '',
-    filterValue: ''
+    openModal: false,
+    detailBreedId: '',
+    filterValue: '',
+    selectedDogBreed: ''
   };
 
   componentDidMount = () => {
@@ -37,10 +40,16 @@ class Container extends Component {
     this.setState({ page: this.state.page + 1 })
   }
 
-  showDetails = async (id) => {
+  showDetails = (id) => {
     this.setState({
-      breedId: id
+      selectedDogBreed: this.state.dogBreeds.filter(breed => breed.id === id)[0],
+      detailBreedId: id,
+      openModal: true
     })
+  }
+
+  closeModal = () => {
+    this.setState({ openModal: false })
   }
 
   searchByFilter = (value) => {
@@ -53,10 +62,10 @@ class Container extends Component {
   }
 
   render () {
-    const { isLoading, dogBreeds, moreExists, filterValue } = this.state
+    const { isLoading, dogBreeds, moreExists, filterValue, selectedDogBreed, openModal } = this.state
     return (
-      <div className='layout'>
-          <Filter handleChange={this.searchByFilter} filter={filterValue} />
+      <div className="layout">
+        <Filter handleChange={this.searchByFilter} filter={filterValue} />
         {dogBreeds.length !== 0 && (
           <Grid items={dogBreeds} handleClick={this.showDetails} />
         )}
@@ -65,15 +74,23 @@ class Container extends Component {
         )}
 
         {moreExists && (
-          <button
-            type='button'
-            className='button container-text'
-            onClick={this.fetchFromNextPage}
-          >
-            Load more
-          </button>
+          <div className="button-wrap">
+            <button
+              className="rad-button light gradient"
+              onClick={this.fetchFromNextPage}
+            >
+              Load more
+            </button>
+          </div>
         )}
-        {isLoading && <div className='container-text'>Loading...</div>}
+        {isLoading && <div className="container-text">Loading...</div>}
+        {selectedDogBreed && (
+          <Detail
+            dogBreed={selectedDogBreed}
+            openModal={openModal}
+            closeModal={this.closeModal}
+          />
+        )}
       </div>
     )
   }
