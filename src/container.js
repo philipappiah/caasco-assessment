@@ -36,7 +36,7 @@ class Container extends Component {
   }
 
   fetchFromNextPage = () => {
-    var page = this.state.page + 1 // make a call to the next page when the load more button has been triggere
+    var page = this.state.page + 1 // make a call to the next page when the load more button has been triggered
     this.fetchDogBreedsFromApi(page)
     this.setState({ page: this.state.page + 1 })
   }
@@ -66,7 +66,7 @@ class Container extends Component {
     const { isLoading, dogBreeds, moreExists, filterValue, selectedDogBreed, openModal } = this.state
     return (
       <div className="layout">
-        {/* fliter form */}
+        {/* filter form */}
         <Filter handleChange={this.searchByFilter} filter={filterValue} />
         {/* Items grid component */}
         {dogBreeds.length !== 0 && (
