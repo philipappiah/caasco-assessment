@@ -36,7 +36,7 @@ class Container extends Component {
   }
 
   fetchFromNextPage = () => {
-    var page = this.state.page + 1
+    var page = this.state.page + 1 // make a call to the next page when the load more button has been triggere
     this.fetchDogBreedsFromApi(page)
     this.setState({ page: this.state.page + 1 })
   }
@@ -66,7 +66,9 @@ class Container extends Component {
     const { isLoading, dogBreeds, moreExists, filterValue, selectedDogBreed, openModal } = this.state
     return (
       <div className="layout">
+        {/* fliter form */}
         <Filter handleChange={this.searchByFilter} filter={filterValue} />
+        {/* Items grid component */}
         {dogBreeds.length !== 0 && (
           <Grid items={dogBreeds} handleClick={this.showDetails} />
         )}
@@ -74,6 +76,7 @@ class Container extends Component {
           <div>No more dog breeds found.</div>
         )}
 
+        {/* disable load more button if no more data is left */}
         {moreExists && (
             <button
               className={`${Styles.button} -blue center`}
@@ -83,6 +86,7 @@ class Container extends Component {
             </button>
         )}
         {isLoading && <div className="container-text">Loading...</div>}
+        {/* show detail view modal on item selected */}
         {selectedDogBreed && (
           <Detail
             dogBreed={selectedDogBreed}

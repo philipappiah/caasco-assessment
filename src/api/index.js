@@ -16,7 +16,7 @@ export const fetchDogBreeds = page => fetch(`${baseUrl}?page=${page}&limit=10`, 
 })
   .then(response => {
     if (!response.ok) {
-      throw Error(response.statusText)
+      throw Error(response.statusText)// handle error when the response is not as expected
     }
-    return response.json()
+    return response.json()// return data as json
   })
