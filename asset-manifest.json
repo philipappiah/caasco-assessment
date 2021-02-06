@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/caasco-assessment/static/css/main.e33b3e22.chunk.css",
-    "main.js": "/caasco-assessment/static/js/main.095b272d.chunk.js",
-    "main.js.map": "/caasco-assessment/static/js/main.095b272d.chunk.js.map",
+    "main.css": "/caasco-assessment/static/css/main.416cfcc1.chunk.css",
+    "main.js": "/caasco-assessment/static/js/main.a18cf0c6.chunk.js",
+    "main.js.map": "/caasco-assessment/static/js/main.a18cf0c6.chunk.js.map",
     "runtime-main.js": "/caasco-assessment/static/js/runtime-main.f0e0ff43.js",
     "runtime-main.js.map": "/caasco-assessment/static/js/runtime-main.f0e0ff43.js.map",
     "static/js/2.49d94447.chunk.js": "/caasco-assessment/static/js/2.49d94447.chunk.js",
     "static/js/2.49d94447.chunk.js.map": "/caasco-assessment/static/js/2.49d94447.chunk.js.map",
     "index.html": "/caasco-assessment/index.html",
-    "static/css/main.e33b3e22.chunk.css.map": "/caasco-assessment/static/css/main.e33b3e22.chunk.css.map",
+    "static/css/main.416cfcc1.chunk.css.map": "/caasco-assessment/static/css/main.416cfcc1.chunk.css.map",
     "static/js/2.49d94447.chunk.js.LICENSE.txt": "/caasco-assessment/static/js/2.49d94447.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f0e0ff43.js",
     "static/js/2.49d94447.chunk.js",
-    "static/css/main.e33b3e22.chunk.css",
-    "static/js/main.095b272d.chunk.js"
+    "static/css/main.416cfcc1.chunk.css",
+    "static/js/main.a18cf0c6.chunk.js"
   ]
 }
