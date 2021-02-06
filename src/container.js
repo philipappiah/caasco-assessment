@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Grid from './components/Grid'
+import Filter from './components/Filter'
 import { fetchDogBreeds } from './api'
 
 class Container extends Component {
@@ -9,7 +10,8 @@ class Container extends Component {
     initialDogBreeds: [],
     isLoading: false,
     moreExists: true,
-    breedId: ''
+    breedId: '',
+    filterValue: ''
   };
 
   componentDidMount = () => {
@@ -41,10 +43,20 @@ class Container extends Component {
     })
   }
 
+  searchByFilter = (value) => {
+    this.setState({ filterValue: value })
+    this.showFilteredBreeds(value)
+  }
+
+  showFilteredBreeds = (value) => {
+    this.setState({ dogBreeds: this.state.initialDogBreeds.filter(breed => breed.name.toLowerCase().includes(value.toLocaleLowerCase())) })
+  }
+
   render () {
-    const { isLoading, dogBreeds, moreExists } = this.state
+    const { isLoading, dogBreeds, moreExists, filterValue } = this.state
     return (
       <div className='layout'>
+          <Filter handleChange={this.searchByFilter} filter={filterValue} />
         {dogBreeds.length !== 0 && (
           <Grid items={dogBreeds} handleClick={this.showDetails} />
         )}
