@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Grid from './components/Grid'
 import Filter from './components/Filter'
 import Detail from './components/Detail'
+import Styles from './Container.module.css'
 import { fetchDogBreeds } from './api'
 
 class Container extends Component {
@@ -74,14 +75,12 @@ class Container extends Component {
         )}
 
         {moreExists && (
-          <div className="button-wrap">
             <button
-              className="rad-button light gradient"
+              className={`${Styles.button} -blue center`}
               onClick={this.fetchFromNextPage}
             >
               Load more
             </button>
-          </div>
         )}
         {isLoading && <div className="container-text">Loading...</div>}
         {selectedDogBreed && (

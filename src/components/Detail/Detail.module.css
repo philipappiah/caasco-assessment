@@ -1,15 +1,4 @@
-.modal {
-    z-index: 9999;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 400px;
-    padding: 15px;
-    border-radius: 10px;
-    transform: translate(-50%, -50%);
-    background: #fff;
-  }
+
   .bg {
     z-index: 9998;
     position: absolute;
@@ -20,25 +9,50 @@
     background: rgba(0,0,0,0.3);
   }
   .container {
-    position: fixed;
-    top: 0;
-    bottom: 0;
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 500px;
-    height: 400px;
-    left: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
+    height: 80%;
+    padding: 5px;
+    margin: 10px;
+  
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background: #fff;
   }
+
+  @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    
+      .container {
+        z-index: 9999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 320px;
+        height: auto;
+        padding: 5px;
+        margin: 10px;
+        
+       
+      
+        border-radius: 10px;
+        transform: translate(-50%, -50%);
+        background: #fff;
+      }
+      
+
+}
   
   .detail {
     background-color: white;
     overflow: auto;
-    width: 100%;
-    height: 100%;
+    max-height: 100%
   }
   
   .image {
@@ -176,3 +190,50 @@
     font-family: 'Raleway', serif;
   }
   
+
+  .button{
+    display: flex;
+	 overflow: hidden;
+     
+	 margin: 10px;
+	 padding: 12px 12px;
+	 cursor: pointer;
+	 -webkit-user-select: none;
+	 -moz-user-select: none;
+	 -ms-user-select: none;
+	 user-select: none;
+     background-color: #161616;
+	 transition: all 150ms linear;
+	 text-align: center;
+	 white-space: nowrap;
+	 text-decoration: none !important;
+	 text-transform: none;
+	 text-transform: capitalize;
+	 color: #fff;
+	 border: 0 none;
+	 border-radius: 10px;
+	 font-size: 13px;
+     width:100px;
+	 font-weight: 500;
+	 line-height: 1.3;
+	 -webkit-appearance: none;
+	 -moz-appearance: none;
+	 appearance: none;
+	 justify-content: center;
+	 align-items: center;
+	 flex: 0 0 160px;
+	 box-shadow: 2px 5px 10px #161616;;
+}
+
+.button:hover {
+    transition: all 150ms linear;
+    opacity: 0.85;
+}
+.button:active {
+    transition: all 150ms linear;
+    opacity: 0.75;
+}
+.button:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+}

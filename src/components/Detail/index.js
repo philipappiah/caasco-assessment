@@ -27,7 +27,7 @@ class Detail extends React.Component {
                 <li>From: {dogBreed.origin}</li>
                 {dogBreed.life_span
                   ? (
-                  <li>Life Span: {dogBreed.life_span}</li>
+                  <li>Life Span: {dogBreed.life_span} years</li>
                     )
                   : null}
 
@@ -56,13 +56,13 @@ class Detail extends React.Component {
 
               <a
                 href={dogBreed.wikipedia_url}
-                className={`${styles.button} ${styles.element} ${styles.link} button`}
+                className={`${styles.element} ${styles.link} button`}
               >
                 Read more about this breed
               </a>
               <button
                 type="button"
-                className={`${styles.button} ${styles.element} button`}
+                className={`${styles.button} -dark center`}
                 onClick={this.closeModal}
               >
                 Close
@@ -115,8 +115,8 @@ Detail.propTypes = {
     origin: PropTypes.string,
     description: PropTypes.string,
     life_span: PropTypes.string,
-    energy_level: PropTypes.string,
-    dog_friendly: PropTypes.string
+    energy_level: PropTypes.number,
+    dog_friendly: PropTypes.number
 
   }),
   openModal: PropTypes.bool,
