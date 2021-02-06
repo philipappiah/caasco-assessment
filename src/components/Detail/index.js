@@ -46,10 +46,10 @@ class Detail extends React.Component {
 
               {dogBreed.description
                 ? (
-                <div className={`${styles.s1}`} >
+                <div className={styles.summary} >
                 <b>Description:</b>
                 <br/>
-                <span>{dogBreed.description}</span>
+                <p >{dogBreed.description}</p>
                 </div>
                   )
                 : null}
